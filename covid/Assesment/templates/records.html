@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        body {
+        background-color: silver;
+        }
+        .grid {
+            background-color: white;
+        }
+        .css-serial {
+                counter-reset: serial-number;  
+        }
+
+        .css-serial td:first-child:before {
+                counter-increment: serial-number;  /* Increment the serial number counter */
+                content: counter(serial-number);  /* Display the counter */
+        }
+    </style>
+</head>
+<body>
+      <div class="grid">
+    <table style="width:100%" class="css-serial">
+        <thead>
+        <th>SI No </th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Temparature</th>
+        <th>Assessment Date</th>
+        <th>Assessment Score</th>
+        <th>Covid-19 Result</th>
+        </thead>
+         {%for instance in queryset %}
+        <tr>
+            <td></td>
+            <td>{{instance.Age}}</td>
+            <td>{{instance.Sex}}</td>
+            <td>{{instance.Temp}}</td>
+            <td>{{instance.Assessment_Date}}</td>
+            <td>{{instance.Assessment_Score}}</td>
+            <td>{{instance.Result}}</td>
+
+
+        </tr>
+          {% endfor %}
+    </table>
+</body>
+</html>

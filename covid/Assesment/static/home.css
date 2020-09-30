@@ -1,0 +1,26 @@
+body {
+  background-color: silver;
+}
+.title {
+  background-color: green;
+  width: auto;
+  height: 100px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 300px;
+  font-size: 50px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 100px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
