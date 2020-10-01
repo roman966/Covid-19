@@ -1,16 +1,5 @@
 from django import forms
 
-
-class CountryForm (forms.Form):
-    OPTIONS = (
-        ("AUT", "Austria"),
-        ("DEU", "Germany"),
-        ("NLD", "Neitherlands"),
-    )
-    Countries = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
-                                          choices=OPTIONS)
-
-
 class BasicForm(forms.Form):
     OPTIONS = (
         ("Male", "Male"),
@@ -29,6 +18,7 @@ class InformationForm(forms.Form):
         ("3", "Sore throat"),
         ("4", "Weakness"),
         ("5", "Runny nose"),
+        ("6", "No Problem"),
     )
 
     Information = forms.MultipleChoiceField(
@@ -45,6 +35,7 @@ class AdditionalInfoForm(forms.Form):
         ("6", "Loss of taste or smell"),
         ("7", "Rash on skin, or discoloration of fingers or toes"),
         ("8", "Loss of speech or movement"),
+        ("9", "No Problem")
     )
 
     AddiInfo = forms.MultipleChoiceField(
