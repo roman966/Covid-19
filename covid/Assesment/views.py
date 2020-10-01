@@ -34,7 +34,7 @@ def basic(request):
                 person.Assessment_Score = 2
             else:
                 person.Assessment_Score = 0
-            return redirect('/Assesment/info')
+            return redirect('/info')
 
     else:
         form = BasicForm
@@ -52,7 +52,7 @@ def information(request):
             Info = form.cleaned_data.get('Information')
             if Info[0] != '6':
                 person.Assessment_Score = person.Assessment_Score+len(Info)-1+3
-            return redirect('/Assesment/addi')
+            return redirect('/addi')
 
     else:
         form = InformationForm
@@ -77,7 +77,7 @@ def additional(request):
                 person.Result = "Positive"
             person.save()
 
-            return redirect('/Assesment/final')
+            return redirect('/final')
 
     else:
         form = AdditionalInfoForm
