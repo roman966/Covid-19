@@ -50,7 +50,8 @@ def information(request):
         form = InformationForm(request.POST)
         if form.is_valid():
             Info = form.cleaned_data.get('Information')
-            person.Assessment_Score = person.Assessment_Score+len(Info)-1+3
+            if Info[0] != '6':
+                person.Assessment_Score = person.Assessment_Score+len(Info)-1+3
             return redirect('/Assesment/addi')
 
     else:
@@ -68,7 +69,8 @@ def additional(request):
         form = AdditionalInfoForm(request.POST)
         if form.is_valid():
             addinfo = form.cleaned_data.get('AddiInfo')
-            person.Assessment_Score = person.Assessment_Score+(len(addinfo)*2)
+            if addinfo[0] != '9':
+                person.Assessment_Score = person.Assessment_Score+(len(addinfo)*2)
             if(person.Assessment_Score < 5):
                 person.Result = "Negative"
             else:
